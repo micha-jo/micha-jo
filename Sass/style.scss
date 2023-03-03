@@ -1,0 +1,15 @@
+//base 
+@use "./base/_reset";
+@use "./base/_flux";
+//utils
+@use "./utils/_main";
+//atoms
+@use "./atoms/_links";
+@use "./atoms/_button";
+//layouts 
+@use "./layouts/_home-cover";
+
+
+//components 
+@use "./components/_header";
+

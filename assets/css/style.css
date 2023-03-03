@@ -1,0 +1,200 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+.flux {
+  margin-right: 48px;
+  margin-left: 48px;
+}
+
+a {
+  font-family: "Rubik", sans-serif;
+}
+a::before {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  height: 1.5px;
+  width: 0%;
+  background-color: #0c0d0d;
+  transition: all 0.5s ease-in-out;
+}
+a:hover {
+  position: relative;
+}
+a:hover::before {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  height: 1.5px;
+  width: 100%;
+  background-color: #0c0d0d;
+}
+
+.link-none {
+  text-decoration: none;
+  color: inherit;
+}
+.link-none::before {
+  display: none;
+}
+
+button {
+  border: none;
+  padding: 6px 12px;
+  border-radius: 24px;
+  display: block;
+  transition: all 0.5s linear;
+}
+
+.button-dark {
+  background-color: #003775;
+  color: #F2B749;
+}
+.button-dark:hover {
+  background-color: #002b5c;
+}
+
+.button-ligth {
+  background-color: #F2B749;
+  color: #003775;
+}
+.button-ligth:hover {
+  background-color: #f0ae31;
+}
+
+.home-cover {
+  height: 100vh;
+  background: url(../../assets/images/montagne.jpg) top/cover;
+}
+.home-cover__title {
+  padding-top: 8vh;
+  font-size: calc(2rem + 3vw);
+  font-family: "Rubik", sans-serif;
+  color: #f4f6f6;
+}
+.home-cover__title span {
+  display: block;
+}
+.home-cover__citation {
+  padding-top: 5vh;
+  font-size: calc(1rem + 1vw);
+  font-family: "Playfair Display";
+  color: #f4f6f6;
+  text-align: left;
+}
+.home-cover__citation-author {
+  text-align: end;
+  padding-top: 50px;
+}
+
+body {
+  height: 200vh;
+}
+
+.header {
+  position: sticky;
+  top: 0px;
+}
+.header__nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: top;
+  background-color: #F2B749;
+  padding: 6px 48px;
+}
+.header__nav-img {
+  height: 35px;
+  width: 35px;
+}
+.header__nav-menu {
+  height: 0px;
+  opacity: 0;
+  align-items: center;
+}
+.header__nav-burger-menu {
+  height: 35px;
+  width: 35px;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  cursor: pointer;
+}
+.header__nav-span {
+  position: relative;
+}
+.header__nav-span, .header__nav-span:before, .header__nav-span:after {
+  background: #0c0d0d;
+  display: block;
+  height: 3px;
+  opacity: 1;
+  position: absolute;
+  transition: 0.3s ease-in-out;
+}
+.header__nav-span:before, .header__nav-span:after {
+  content: "";
+}
+.header__nav-span:before {
+  width: 35px;
+  top: 10px;
+}
+.header__nav-span {
+  width: 35px;
+}
+.header__nav-span::after {
+  width: 35px;
+  top: -10px;
+}
+
+.header__nav-menu.open {
+  opacity: 1;
+  height: 100px;
+}
+
+.open.header__nav-span {
+  transform: rotate(-45deg);
+  top: 13px;
+  width: 27px;
+}
+.open.header__nav-span::before {
+  top: 0px;
+  transform: rotate(90deg);
+  width: 27px;
+}
+.open.header__nav-span::after {
+  top: 0px;
+  left: 0;
+  transform: rotate(90deg);
+  opacity: 0;
+  width: 0;
+}
+
+@media screen and (min-width: 1200px) {
+  .header__nav-menu {
+    opacity: 1;
+    width: 30%;
+  }
+  .header__nav-burger-menu {
+    display: none;
+  }
+  .menu-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+}/*# sourceMappingURL=style.css.map */

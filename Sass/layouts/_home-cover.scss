@@ -1,0 +1,30 @@
+@use "../utils/_fonts" as fonts; 
+@use "../utils/_colors" as colors; 
+
+
+.home-cover{
+  
+  height: 100vh;
+  background: url(../../assets/images/montagne.jpg) top/cover;
+  
+  &__title{
+    padding-top: 8vh ;
+    font-size: calc(2rem + 3vw);
+    font-family: fonts.$font-sans-serif;
+    color: colors.$ligth;
+    span{
+      display: block;
+    }
+  }
+  &__citation{
+    padding-top: 5vh ;
+    font-size: calc(1rem + 1vw);
+    font-family: fonts.$font-serif;
+    color: colors.$ligth;
+    text-align: left;
+    &-author{
+      text-align: end;
+      padding-top: 50px
+    }
+  }
+}

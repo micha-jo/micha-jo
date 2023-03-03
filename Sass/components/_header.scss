@@ -1,0 +1,115 @@
+@use "../utils/_colors" as colors; 
+@use "../utils/_responsive" as responsive; 
+
+
+body {
+  height:200vh
+}
+
+.header{
+  position: sticky;
+  top : 0px; 
+  &__nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: top;
+    background-color: colors.$primary;
+    padding : 6px 48px;
+
+    &-img{
+        height: 35px; 
+        width:35px;
+    }
+    &-menu{
+      height: 0px;
+      opacity: 0;
+      align-items: center;
+    }
+    
+    &-burger-menu{
+      height: 35px;
+      width: 35px; 
+      display: flex;
+      text-align: center;
+      align-items: center;
+      cursor: pointer;    
+    }
+    &-span{
+      position: relative;
+      &, 
+      &:before, 
+      &:after{
+        background: colors.$dark;
+        display: block;
+        height: 3px;
+        opacity: 1;
+        position: absolute;
+        transition: 0.3s ease-in-out;
+        
+      }
+
+      &:before,
+      &:after {
+        content: ""; 
+      }
+      &:before{
+        width: 35px;
+        top: 10px;
+      }
+      &{
+        width: 35px;
+      }
+      &::after{
+        width: 35px;
+        top: -10px;
+      }
+    }
+  }
+
+
+}
+.header__nav-menu.open {
+  opacity: 1;
+  height: 100px;
+}
+
+.open.header__nav-span {
+    transform: rotate(-45deg);
+    top: 13px;
+    width: 27px;
+    &::before {
+      top: 0px;
+    transform: rotate(90deg);
+    width: 27px;
+    }
+    &::after{
+      top: 0px;
+      left: 0;
+      transform: rotate(90deg);
+      opacity: 0;
+      width: 0;
+    }
+    
+  }
+
+  @media screen and (min-width: responsive.$laptop) {
+    .header{
+      &__nav{
+        &-menu {
+          opacity: 1;
+          width: 30%;
+          
+        }
+        &-burger-menu{
+          display: none 
+        }
+
+      }
+
+    }
+    .menu-list{
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+  }
